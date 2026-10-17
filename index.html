@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Pixel Drag - Racing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game"></canvas>
+
+        <!-- HUD (Счет) -->
+        <div id="hud">
+            <div id="score">0 м</div>
+        </div>
+
+        <!-- Стартовое меню -->
+        <div id="start-menu" class="menu">
+            <h1>PIXEL DRAG</h1>
+            <div class="controls">
+                <p><b>Газ</b> — Газуй</p>
+                <p><b>Тормоз</b> — Тормози</p>
+                <p><b>Руль</b> — Влево / Вправо</p>
+                <p><b>Передача</b> — Вверх / Вниз</p>
+                <p><b>Автомат</b> — Вкл / Выкл</p>
+            </div>
+            <button id="start-btn">ПОЕХАЛИ</button>
+        </div>
+
+        <!-- Конец игры -->
+        <div id="game-over" class="menu hidden">
+            <h1>АВАРИЯ</h1>
+            <p id="final-score">Дистанция: 0 м</p>
+            <button id="restart-btn">ЗАНОВО</button>
+        </div>
+    </div>
+
+    <!-- Подключаем скрипты -->
+    <script src="cars.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
