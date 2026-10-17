@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Pixel Drag Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ЭКРАН 1: ГАРАЖ (Вид сбоку) -->
+    <div id="garage-screen">
+        <div class="garage-header">
+            <h1>ГАРАЖ</h1>
+            <p>Баланс: <span id="money">1000</span> ₽</p>
+            <p style="font-size:12px; color:#aaa;">(Проехай в гонке, чтобы заработать)</p>
+        </div>
+        
+        <div class="car-display">
+            <div id="car-sprite"></div>
+            <h2 id="car-name">Lada 2101</h2>
+            <p id="car-stats" style="color:#00ff88; font-size:14px;">Макс. скорость: 200 км/ч</p>
+        </div>
+
+        <div class="tuning-menu">
+            <div class="tuning-item">
+                <span>Турбина (+40 км/ч)</span>
+                <button id="buy-turbo">Купить (500 ₽)</button>
+            </div>
+            <div class="tuning-item">
+                <span>Спойлер (Стиль)</span>
+                <button id="buy-spoiler">Купить (200 ₽)</button>
+            </div>
+        </div>
+
+        <button id="btn-race" class="main-btn">В ГОНКУ 🏁</button>
+    </div>
+
+    <!-- ЭКРАН 2: ГОНКА (Вид от водителя) -->
+    <div id="game-container" class="hidden">
+        <canvas id="game"></canvas>
+
+        <div id="hud">
+            <div id="speed">0</div><span class="unit">км/ч</span>
+            <div id="gear-box">G: <span id="gear">1</span></div>
+            <div id="rpm-bar"><div id="rpm-fill"></div></div>
+        </div>
+
+        <div id="pedals">
+            <button id="btn-brake" class="pedal">ТОРМОЗ</button>
+            <button id="btn-gas" class="pedal">ГАЗ</button>
+        </div>
+
+        <div id="game-over" class="menu hidden">
+            <h1>ФИНИШ</h1>
+            <p id="final-score">Дистанция: 0 м</p>
+            <p id="earned-money">Заработано: 0 ₽</p>
+            <button id="btn-back-garage">В ГАРАЖ</button>
+        </div>
+    </div>
+
+    <script src="cars.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
